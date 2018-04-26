@@ -16,6 +16,7 @@ namespace AawTeam\Pagenotfoundhandling\Realurl;
  * The TYPO3 project - inspiring people to share!
  */
 
+use Tx\Realurl\Hooks\UrlRewritingHook;
 
 /**
  * Realurl XCLASS
@@ -31,7 +32,7 @@ namespace AawTeam\Pagenotfoundhandling\Realurl;
  * @package  pagenotfoundhandling
  * @see      \AawTeam\Pagenotfoundhandling\Realurl\Decoder\UrlDecoder
  */
-class RealurlV1 extends \tx_realurl
+class RealurlV1 extends UrlRewritingHook
 {
     /**
      * @param string $msg
@@ -45,6 +46,6 @@ class RealurlV1 extends \tx_realurl
             $_GET['L'] = $this->detectedLanguage;
         }
 
-        return parent::decodeSpURL_throw404($msg);
+        parent::decodeSpURL_throw404($msg);
     }
 }
