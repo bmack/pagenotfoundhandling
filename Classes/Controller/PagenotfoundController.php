@@ -200,10 +200,9 @@ class PagenotfoundController
      * Main method called through TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController::pageErrorHandler()
      *
      * @param array $params
-     * @param TypoScriptFrontendController $typoScriptFrontendController
      * @return string
      */
-    public function main($params, TypoScriptFrontendController $typoScriptFrontendController)
+    public function main($params)
     {
         $this->_get = GeneralUtility::_GET();
 
